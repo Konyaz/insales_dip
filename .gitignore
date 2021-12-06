@@ -14,7 +14,7 @@
 *.properties
 
 # Package Files #
-*.jar
+
 *.war
 *.nar
 *.ear
@@ -40,4 +40,3 @@ target/
 .vscode
 /gradlew
 /gradlew.bat
-settings.gradle
