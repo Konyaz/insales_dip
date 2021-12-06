@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.8.1"
+    id "io.freefair.lombok" version "6.0.0-m2"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'io.rest-assured:rest-assured:4.4.0',
+            "com.codeborne:selenide:5.22.1",
+            "org.junit.jupiter:junit-jupiter-api:5.8.0-M1",
+            "org.aeonbits.owner:owner:1.0.12",
+            "io.qameta.allure:allure-selenide:2.14.0",
+            "io.appium:java-client:7.0.0",
+            "com.fasterxml.jackson.core:jackson-databind:2.11.2",
+            "org.assertj:assertj-core:3.19.0"
+    )
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.0-M1"
+}
+
+allure {
+    version = '2.14.0'
+    aspectjweaver = true
+    autoconfigure = true
+    configuration = "testImplementation"
+    useJUnit5 {
+        version = '2.14.0'
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+    if (System.getProperty("threads") != null) {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'                 : true,
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
+        ]
+    }
+}
+
+task mobile_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'mobile'
+    }
+}
+
+task web_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'web'
+    }
+}
+
+task api_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'api'
+    }
+}
