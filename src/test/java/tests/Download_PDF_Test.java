@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
-public class Download_FileTest extends TestBase {
+public class Download_PDF_Test extends TestBase {
 
 
     @Test
