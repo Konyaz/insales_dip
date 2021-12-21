@@ -50,7 +50,12 @@ public class InsalesTests extends TestBase {
 
         step("Check transfer", () -> {
             $(byXpath("//a[contains(text(),'Переезд на InSales')]")).shouldBe(visible).click();
-            $(".row > .m-b-50").shouldHave(text("Перенесем сайт вашего магазина на InSales бесплатно"));
+            $(".m-t-20").shouldBe(visible).shouldHave(text("Избавьтесь\n" +
+                    "от головной боли\n" +
+                    "с интернет-магазином –\n" +
+                    "перенесите сайт на InSales\n" +
+                    "без потери трафика\n" +
+                    "с любой CMS-платформы"));
         });
 
         step("Check support", () -> {
