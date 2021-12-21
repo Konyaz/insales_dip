@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.selenide.Configuration;
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -32,6 +33,7 @@ public class Download_PDF_Test extends TestBase {
 
             PDF parsedPdf = new PDF(pdf);
             Assertions.assertEquals(14, parsedPdf.numberOfPages);
+            FileUtils.deleteDirectory(new File("./downloads"));
 
         });
 
