@@ -23,7 +23,7 @@ public class InsalesTests extends TestBase {
             $(byXpath("//span[contains(.,'Каналы продаж')]")).click();
             $(byLinkText("Сайт интернет-магазина")).shouldBe(visible).click();
             $(".fw-500").click();
-            $(".fw-700").shouldHave(text("онструктор интернет-магазина\n" +
+            $(".fw-700").shouldHave(text("Конструктор интернет-магазина\n" +
                     "и профессиональная платформа\n" +
                     "для сайта интернет-магазина"));
         });
