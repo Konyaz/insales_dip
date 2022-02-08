@@ -5,7 +5,7 @@
 ### Technology Stack
 
 ![IntelliJ Idea](images/icons/Idea.png)
-![IntelliJ Idea](images/icons/Git.png)
+![Git](images/icons/Git.png)
 ![Java](images/icons/Java.png)
 ![Gradle](images/icons/Gradle.png)
 ![JUnit5](images/icons/JUnit5.png)
