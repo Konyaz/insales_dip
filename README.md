@@ -21,6 +21,8 @@ If you've downloaded these tests to your computer, run them with the following c
 ```bash
 gradle clean test
 ```
+### Еxamples of Automated Mobile tests are <a target="_blank" href="https://github.com/Konyaz/Browserstack_dip">here</a> :green_circle:
+### Еxamples of Api automation tests are <a target="_blank" href="https://github.com/Konyaz/rest_assured_dip/">here</a> :green_circle:
 
 ### Allure report
 ![Allure](images/Allure1.png)
@@ -29,20 +31,25 @@ gradle clean test
 ![Allure](images/Allure4.png)
 
 ### Allure TestOps
-Dashboards
+
+:bar_chart: Dashboards
+
 ![TestOps Dashboards](images/AllureTestOps.png)
 
 
-Automated tests can be imported by Allure TestOps as test cases.
+:robot: Automated tests can be imported by Allure TestOps as test cases.
+
 ![TestOps TestCases](images/AllureTestOps1.png)
 ![TestOps TestCases](images/AllureTestOps2.png)
 
-### Video
+### Video :tv:
 ![Video](images/Video.gif)
 
 ### Jenkins
 Click <a target="_blank" href="https://jenkins.autotests.cloud/job/Insales/build">here</a> to run the tests.
+
 ![Jenkins](images/Jenkins.png)
 
 ### Telegram
+
 ![Telegram](images/Telegram.png)
