@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class DownloadPDFTest extends TestBase {
 
     @Test
-    void selenideDownloadReadmeTest() throws IOException {
+    void selenideDownloadPDFTest() throws IOException {
         Configuration.downloadsFolder = "./downloads";
 
         step("Open website", () -> {

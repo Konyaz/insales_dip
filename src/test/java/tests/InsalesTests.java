@@ -12,7 +12,7 @@ import static io.qameta.allure.Allure.step;
 public class InsalesTests extends TestBase {
 
     @Test
-    void successfulFillFormTest() {
+    void successfulWebTest() {
         step("Open website", () -> {
             open("https://www.insales.ru/");
         });
