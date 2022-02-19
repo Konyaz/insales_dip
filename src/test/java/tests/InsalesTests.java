@@ -1,6 +1,5 @@
 package tests;
 
-
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,7 +8,6 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
-
 
 public class InsalesTests extends TestBase {
 
@@ -34,7 +32,6 @@ public class InsalesTests extends TestBase {
         });
 
         step("Check search", () -> {
-
             $(byName("q")).shouldBe(visible).click();
             $(byName("q")).val("Fine").pressEnter();
             $(byLinkText("Fine | Бесплатно")).shouldBe(visible).shouldHave(text("Fine | Бесплатно"));
@@ -63,5 +60,4 @@ public class InsalesTests extends TestBase {
         });
 
     }
-
 }

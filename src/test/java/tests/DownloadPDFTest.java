@@ -13,29 +13,21 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-
-public class Download_PDF_Test extends TestBase {
-
+public class DownloadPDFTest extends TestBase {
 
     @Test
     void selenideDownloadReadmeTest() throws IOException {
-
         Configuration.downloadsFolder = "./downloads";
-
 
         step("Open website", () -> {
             open("https://www.insales.ru/page/partnership_faq");
         });
 
         step(" Check Download", () -> {
-
             File pdf = $(".c-inherit").download();
-
             PDF parsedPdf = new PDF(pdf);
             Assertions.assertEquals(14, parsedPdf.numberOfPages);
             FileUtils.deleteDirectory(new File("./downloads"));
-
         });
-
     }
 }
